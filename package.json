@@ -32,7 +32,9 @@
 		"pretest": "npm run compile && npm run lint",
 		"lint": "eslint src --ext ts",
 		"test": "node ./out/test/runTest.js",
-		"package": "vsce package"
+		"package": "vsce package -o til.vsix",
+		"print-version": "echo ::set-output name=version::$npm_package_version",
+		"release": "git tag v$npm_package_version && git push origin v$npm_package_version"
 	},
 	"devDependencies": {
 		"@types/vscode": "^1.57.0",
