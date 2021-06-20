@@ -1,0 +1,15 @@
+{
+	"til": {
+		"prefix": "til",
+		"body": [
+			"----------------------------------------------------------------------",
+			"",
+			"$1",
+			"",
+			"date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+			"guid: $UUID",
+			"tags: $2"
+		],
+		"description": "Add new TIL entry"
+	}
+}

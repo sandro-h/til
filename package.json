@@ -2,6 +2,10 @@
 	"name": "til",
 	"displayName": "TIL",
 	"description": "TIL",
+	"publisher": "sandro-h",
+	"repository": {
+		"url": "https://github.com/sandro-h/til"
+	},
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.57.0"
@@ -10,16 +14,16 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:til.helloWorld"
+		"*"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [
+		"snippets": [
 			{
-				"command": "til.helloWorld",
-				"title": "Hello World"
+			  "language": "plaintext",
+			  "path": "./til-snippets.json"
 			}
-		]
+		  ]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
@@ -27,7 +31,8 @@
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile && npm run lint",
 		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
+		"test": "node ./out/test/runTest.js",
+		"package": "vsce package"
 	},
 	"devDependencies": {
 		"@types/vscode": "^1.57.0",
